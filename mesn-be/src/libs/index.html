@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mattweb</title>
+  </head>
+  <body>
+    <header>
+      <h1>{{values.date}}</h1>
+    </header>
+    <div class="contenedor">
+      <table border="1">
+        <thead>
+          <tr>
+            <td>DESCRIPTION</td>
+            <td>QTY</td>
+            <td>UNIT PRICE</td>
+            <td>AMOUNT</td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each values.products}}
+          <tr>
+            <td>{{this.name}}</td>
+            <td>{{this.quantity}}</td>
+            <td>{{this.uprice}}</td>
+            <td>{{this.amount}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <div class="resultado">
+        <br />
+        <label for="fname">Total: </label><br />
+        <span>{{values.total}}</span>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+    font-family: helvetica;
+    font-size: 17px;
+  }
+
+  table {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 90%;
+    margin: auto;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  table tr {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  table td,
+  table th {
+    letter-spacing: 1px;
+    padding: 10px;
+  }
+
+  table thead {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #666;
+    color: white;
+  }
+
+  .contenedor {
+    margin: auto;
+    width: 80%;
+  }
+
+  .resultado {
+    text-align: right;
+    margin: auto;
+  }
+</style>
